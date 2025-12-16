@@ -1,0 +1,215 @@
+'use client'
+
+import { useState } from 'react'
+import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { useToast } from '@/hooks/use-toast'
+
+export default function ContactPage() {
+  const { toast } = useToast()
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    setTimeout(() => {
+      toast({
+        title: 'Message Sent!',
+        description: 'Thank you for contacting us. We will get back to you soon.',
+      })
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+      })
+      setIsSubmitting(false)
+    }, 1000)
+  }
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  return (
+    <div className="py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* HEADER */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Get in Touch
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Have a project in mind? We’d love to hear from you.
+            Send us a message and we’ll respond as soon as possible.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          {/* FORM */}
+          <div className="lg:col-span-2">
+            <Card className="border-0 shadow-lg bg-card">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        First Name *
+                      </label>
+                      <Input
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Last Name *
+                      </label>
+                      <Input
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Email Address *
+                    </label>
+                    <Input
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Phone *
+                    </label>
+                    <Input
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Message *
+                    </label>
+                    <Textarea
+                      name="message"
+                      rows={6}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    size="lg"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  >
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* CONTACT INFO */}
+          <div className="space-y-6">
+
+            <Card className="border-0 shadow-lg bg-card">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-foreground">
+                  Contact Information
+                </h3>
+
+                <div className="space-y-4 text-sm text-muted-foreground">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-secondary mt-0.5" />
+                    <div>
+                      <p className="font-medium text-foreground">Head Office</p>
+                      <p>Perinthalmanna</p>
+                      <p>Malappuram, Kerala, India</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-secondary" />
+                    <a href="tel:+918606773677" className="hover:text-secondary">
+                      +91 8606773677
+                    </a>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-secondary" />
+                    <a
+                      href="mailto:info@shaforms.com"
+                      className="hover:text-secondary"
+                    >
+                      info@shaforms.com
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* SOCIAL */}
+            <Card className="border-0 shadow-lg bg-card">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-foreground">
+                  Follow Us
+                </h3>
+
+                <div className="flex gap-4">
+                  {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      target="_blank"
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

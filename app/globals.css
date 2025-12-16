@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* =====================
+       SHAforms Brand Colors
+       ===================== */
+
+    /* Primary (Logo Teal) → #4d6c6f */
+    --primary: 186 17% 37%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary (Logo Green) → #7eae41 */
+    --secondary: 83 44% 47%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* =====================
+       Base UI
+       ===================== */
+
+    --background: 210 20% 98%;
+    --foreground: 200 15% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 15% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 15% 18%;
+
+    /* =====================
+       UI States
+       ===================== */
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 200 10% 40%;
+
+    --accent: 83 44% 47%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* =====================
+       Borders & Focus
+       ===================== */
+
+    --border: 210 16% 88%;
+    --input: 210 16% 88%;
+    --ring: 83 44% 47%;
+
+    /* =====================
+       Charts (Infra-friendly)
+       ===================== */
+
+    --chart-1: 186 17% 37%;
+    --chart-2: 83 44% 47%;
+    --chart-3: 200 12% 30%;
+    --chart-4: 83 30% 60%;
+    --chart-5: 186 12% 55%;
+
+    --radius: 0.75rem;
+  }
+
+  /* =====================
+     Dark Mode
+     ===================== */
+
+  .dark {
+    --background: 200 18% 10%;
+    --foreground: 0 0% 96%;
+
+    --card: 200 18% 13%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 200 18% 13%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 83 44% 47%;
+    --primary-foreground: 200 18% 10%;
+
+    --secondary: 186 17% 37%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 200 15% 20%;
+    --muted-foreground: 200 10% 65%;
+
+    --accent: 83 44% 47%;
+    --accent-foreground: 200 18% 10%;
+
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 200 15% 22%;
+    --input: 200 15% 22%;
+    --ring: 83 44% 47%;
+
+    --chart-1: 83 44% 47%;
+    --chart-2: 186 17% 37%;
+    --chart-3: 0 0% 70%;
+    --chart-4: 83 30% 60%;
+    --chart-5: 186 12% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
