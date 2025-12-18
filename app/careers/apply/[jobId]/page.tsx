@@ -2,96 +2,150 @@
 
 import { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
+
+type ExperienceType = 'Fresher' | 'Experienced';
 
 export default function ApplyPage() {
-  const { jobId } = useParams();
+  const params = useParams();
+  const jobId = params.jobId as string; // ✅ force string
   const router = useRouter();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [experienceType, setExperienceType] = useState('Fresher');
-  const [years, setYears] = useState('');
+  const [experienceType, setExperienceType] =
+    useState<ExperienceType>('Fresher');
+  const [years, setYears] = useState<number | ''>('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError('');
 
-    const subject = encodeURIComponent(`Job Application – ${jobId}`);
-    const body = encodeURIComponent(`
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Experience: ${experienceType}
-Years of Experience: ${experienceType === 'Experienced' ? years : 'N/A'}
-    `);
+    // 🔴 Basic validation (important)
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setError('Please fill all required fields.');
+      return;
+    }
 
-    // 🔥 THIS OPENS GMAIL WEB DIRECTLY
-    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=mohammedadhilpmr@gmail.com&subject=${subject}&body=${body}`;
+    if (experienceType === 'Experienced' && (!years || years < 1)) {
+      setError('Please enter valid years of experience.');
+      return;
+    }
 
-    // Redirect to success page after small delay
-    setTimeout(() => {
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          job_id: jobId,
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          experience_type: experienceType,
+          experience_years:
+            experienceType === 'Experienced' ? Number(years) : null, // ✅ FIX
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Application submission failed');
+      }
+
       router.push('/careers/application-success');
-    }, 1000);
-  };
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
-    <div className="max-w-xl mx-auto py-20 px-6">
-      <Card>
-        <CardContent className="p-8">
-          <h1 className="text-2xl font-bold mb-6">
-            Apply for this Position
-          </h1>
+    <main className="max-w-xl mx-auto px-6 py-20">
+      <h1 className="text-3xl font-bold mb-10 text-primary">
+        Apply for this Position
+      </h1>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              placeholder="Full Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-xl shadow">
+
+        <div>
+          <label className="block mb-1 font-medium">Full Name</label>
+          <input
+            className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1 font-medium">Email</label>
+          <input
+            type="email"
+            className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1 font-medium">Phone Number</label>
+          <input
+            className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block mb-1 font-medium">Experience</label>
+          <select
+            className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+            value={experienceType}
+            onChange={e =>
+              setExperienceType(e.target.value as ExperienceType)
+            }
+          >
+            <option value="Fresher">Fresher</option>
+            <option value="Experienced">Experienced</option>
+          </select>
+        </div>
+
+        {experienceType === 'Experienced' && (
+          <div>
+            <label className="block mb-1 font-medium">
+              Years of Experience
+            </label>
+            <input
+              type="number"
+              min={1}
+              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+              value={years}
+              onChange={e => setYears(Number(e.target.value))}
               required
             />
+          </div>
+        )}
 
-            <Input
-              type="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+        {error && (
+          <p className="text-red-600 font-medium">{error}</p>
+        )}
 
-            <Input
-              placeholder="Phone Number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
-
-            <select
-              className="w-full border rounded-md px-3 py-2"
-              value={experienceType}
-              onChange={(e) => setExperienceType(e.target.value)}
-            >
-              <option value="Fresher">Fresher</option>
-              <option value="Experienced">Experienced</option>
-            </select>
-
-            {experienceType === 'Experienced' && (
-              <Input
-                placeholder="Years of Experience"
-                value={years}
-                onChange={(e) => setYears(e.target.value)}
-                required
-              />
-            )}
-
-            <Button type="submit" className="w-full">
-              Submit Application
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:opacity-90 disabled:opacity-60"
+        >
+          {loading ? 'Submitting…' : 'Submit Application'}
+        </button>
+      </form>
+    </main>
   );
 }

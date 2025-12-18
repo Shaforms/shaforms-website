@@ -1,5 +1,5 @@
 'use client'
-
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -20,24 +20,33 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    setTimeout(() => {
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for contacting us. We will get back to you soon.',
-      })
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: '',
-      })
-      setIsSubmitting(false)
-    }, 1000)
+  try {
+    const router = useRouter()
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+
+    if (!res.ok) {
+      throw new Error('Submission failed')
+    }
+
+    router.push('/contact/success')
+  } catch (err) {
+    toast({
+      title: 'Error',
+      description: 'Something went wrong. Please try again.',
+      variant: 'destructive',
+    })
+  } finally {
+    setIsSubmitting(false)
   }
+}
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

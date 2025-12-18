@@ -1,3 +1,4 @@
+import { useParams } from 'next/navigation';
 import { Briefcase, Users, TrendingUp, Heart } from 'lucide-react';
 import {
   Card,
@@ -183,6 +184,7 @@ export default async function CareersPage() {
               We’re always interested in skilled professionals.
               Reach out and we’ll keep you in mind for future roles.
             </p>
+            
 
             <Link href="/contact">
               <Button size="lg" className="bg-accent text-black hover:opacity-90">
@@ -191,6 +193,7 @@ export default async function CareersPage() {
             </Link>
           </CardContent>
         </Card>
+        
 
       </div>
     </main>

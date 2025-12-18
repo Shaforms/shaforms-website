@@ -113,6 +113,16 @@ export default function AdminDashboard() {
             </Card>
           </Link>
 
+<Link href="/admin/applications">
+  <div className="rounded-xl border p-6 hover:shadow-md transition">
+    <h3 className="text-xl font-semibold">Manage Applications</h3>
+    <p className="text-sm text-muted-foreground">
+      View and review job applications.
+    </p>
+  </div>
+</Link>
+
+
         </div>
       </div>
     </main>
