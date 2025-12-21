@@ -18,25 +18,22 @@ export default function ContactPage() {
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-
+const router = useRouter()
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
   setIsSubmitting(true)
 
   try {
-    const router = useRouter()
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     })
 
-    if (!res.ok) {
-      throw new Error('Submission failed')
-    }
+    if (!res.ok) throw new Error()
 
     router.push('/contact/success')
-  } catch (err) {
+  } catch {
     toast({
       title: 'Error',
       description: 'Something went wrong. Please try again.',
@@ -64,7 +61,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? We’d love to hear from you.
+            Have a project in mind? Enkil umbikkuo.
             Send us a message and we’ll respond as soon as possible.
           </p>
         </div>
