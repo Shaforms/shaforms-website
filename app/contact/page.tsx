@@ -174,8 +174,10 @@ const router = useRouter()
 
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-secondary" />
-                    <a href="tel:+919876543210  | +919876543200" className="hover:text-secondary">
-                      +91 9876543210|+919876543200
+                    <a href="tel:+919876543210" className="hover:text-secondary">
+                     <a href="tel:+919876543200" className="hover:text-secondary">
+                      +91 9876543210 | +919876543200
+                      </a>
                     </a>
                   </div>
 
