@@ -54,15 +54,15 @@ export default function AboutPage() {
           {[
             {
               icon: Target,
-              title: 'Our Mission',
+              title: 'Our Vision',
               text:
-                'To deliver exceptional construction services that exceed client expectations through innovation, quality craftsmanship, and unwavering commitment to excellence.',
+                'To be the trusted leader in construction,recognized for excellence in safety,sustainability and client satisfaction, shaping resilient built environments for future generations.',
             },
             {
               icon: Eye,
-              title: 'Our Vision',
+              title: 'Our Mission',
               text:
-                'To be the most trusted and preferred construction partner in Kerala, known for transforming dreams into reality through sustainable practices and a customer-first approach.',
+                'To deliver safe, sustainable and high quality infrastructure solutions on time, while fostering integrity, innovation and teamwork for clients, employees and communities.',
             },
           ].map((item, i) => (
             <Card key={i} className="border-0 shadow-lg bg-card">
@@ -152,7 +152,6 @@ export default function AboutPage() {
                 'Quality materials and craftsmanship',
                 'Timely project completion',
                 'Transparent communication',
-                'Competitive pricing',
                 'After-sales support',
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-2">

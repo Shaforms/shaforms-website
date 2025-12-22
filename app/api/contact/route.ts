@@ -1,7 +1,13 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY!)
+const apiKey = process.env.RESEND_API_KEY
+
+if (!apiKey) {
+  throw new Error('RESEND_API_KEY is missing')
+}
+
+const resend = new Resend(apiKey)
 
 export async function POST(req: Request) {
   try {
@@ -12,7 +18,7 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: 'Shaforms Contact <onboarding@resend.dev>', // TEMP SAFE
+      from: 'Shaforms Contact <onboarding@resend.dev>', // SAFE
       to: ['info@shaforms.com'],
       replyTo: email,
       subject: `New Contact Message from ${firstName} ${lastName}`,

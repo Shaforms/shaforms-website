@@ -61,7 +61,7 @@ const router = useRouter()
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Enkil umbikkuo.
+            Have a project in mind? .
             Send us a message and we’ll respond as soon as possible.
           </p>
         </div>
@@ -166,15 +166,16 @@ const router = useRouter()
                     <MapPin className="h-5 w-5 text-secondary mt-0.5" />
                     <div>
                       <p className="font-medium text-foreground">Head Office</p>
-                      <p>Perinthalmanna</p>
-                      <p>Malappuram, Kerala, India</p>
+                      <p>3A-EDIFICE Building</p>
+                  <p>Kottaram Road, East Nadakkavu</p>
+                  <p>Calicut-6, Kerala</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-secondary" />
-                    <a href="tel:+918606773677" className="hover:text-secondary">
-                      +91 8606773677
+                    <a href="tel:+919876543210  | +919876543200" className="hover:text-secondary">
+                      +91 9876543210|+919876543200
                     </a>
                   </div>
 
