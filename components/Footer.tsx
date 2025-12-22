@@ -40,8 +40,9 @@ export default function Footer() {
                   <p className="font-medium text-foreground">
                     Head Office
                   </p>
-                  <p>Perinthalmanna</p>
-                  <p>Malappuram, Kerala, India</p>
+                  <p>3A-EDIFICE Building</p>
+                  <p>Kottaram Road, East Nadakkavu</p>
+                  <p>Calicut-6, Kerala</p>
                 </div>
               </div>
 
