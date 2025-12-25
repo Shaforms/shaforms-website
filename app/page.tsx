@@ -9,10 +9,20 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-background to-muted py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              DEFINING THE{' '}
-              <span className="text-secondary">SKYLINE</span>
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight">
+  <span className="inline-block transition-all duration-500 ease-out hover:-translate-y-1">
+    DEFINING THE
+  </span>{' '}
+  <span className="relative inline-block text-primary group cursor-pointer">
+    <span className="relative z-10 transition-colors duration-300 group-hover:text-primary/80">
+      SKYLINE
+    </span>
+
+    {/* underline animation */}
+    <span className="absolute left-0 -bottom-2 h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+  </span>
+</h1>
+
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Premier construction company specializing in residential,
