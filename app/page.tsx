@@ -10,8 +10,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Building Dreams with{' '}
-              <span className="text-secondary">Excellence</span>
+              DEFINING THE{' '}
+              <span className="text-secondary">SKYLINE</span>
             </h1>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">

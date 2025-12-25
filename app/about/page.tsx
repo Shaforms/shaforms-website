@@ -1,4 +1,5 @@
 import { Target, Eye, Award, Users, CheckCircle } from 'lucide-react'
+import { Handshake } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 
 export default function AboutPage() {
@@ -12,7 +13,7 @@ export default function AboutPage() {
             About Shaforms
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Building excellence across Kerala with dedication and expertise
+            Building excellence with dedication and expertise
           </p>
         </div>
 
@@ -25,25 +26,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Shaforms Constructions is a premier construction company based in
-                  Malappuram, Kerala, specializing in residential, commercial, and
-                  turnkey construction projects. With years of experience and a
-                  commitment to excellence, we have established ourselves as a
-                  trusted name in the construction industry.
-                </p>
-                <p>
-                  Our foundation is excellence, delivering what we promised. We
-                  believe in building lasting relationships with our clients
-                  through quality craftsmanship, innovative design solutions, and
-                  unwavering dedication to project success.
-                </p>
-                <p>
-                  At Shaforms, we understand that your project is more than just a
-                  construction endeavor — it’s the realization of your dreams.
-                  That’s why we provide individualized attention to every client,
-                  ensuring their vision is brought to life with precision and
-                  care.
-                </p>
+We are a team of dedicated and highly qualified Civil Engineers driven by a passion for transforming ideas into enduring, high-quality structures. With strong technical expertise and a detail-oriented approach, we specialize in planning, designing, and executing projects that balance functionality, aesthetics, and structural integrity. Our work is guided by engineering precision, industry best practices, and a deep understanding of site conditions, materials, and construction methodologies.                </p>
+              <p>
+                We are a team of dedicated and highly qualified Civil Engineers driven by a passion for transforming ideas into enduring, high-quality structures. With strong technical expertise and a detail-oriented approach, we specialize in planning, designing, and executing projects that balance functionality, aesthetics, and structural integrity. Our work is guided by engineering precision, industry best practices, and a deep understanding of site conditions, materials, and construction methodologies.
+              </p>
               </div>
             </CardContent>
           </Card>
@@ -84,57 +70,82 @@ export default function AboutPage() {
         {/* CORE VALUES */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-            Our Core Values
+            Our Core Objectives
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Award,
-                title: 'Excellence',
-                description: 'Delivering the highest quality in every project',
-              },
-              {
-                icon: Users,
-                title: 'Integrity',
-                description: 'Building trust through transparency and honesty',
-              },
-              {
-                icon: Target,
-                title: 'Innovation',
-                description: 'Embracing new technologies and smarter solutions',
-              },
-              {
-                icon: Eye,
-                title: 'Customer Focus',
-                description: 'Putting client satisfaction first, always',
-              },
-            ].map((value, index) => {
-              const Icon = value.icon
-              return (
-                <Card
-                  key={index}
-                  className="border-0 shadow-lg text-center group hover:shadow-xl transition-all bg-card"
-                >
-                  <CardContent className="p-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-secondary/10 rounded-full mb-4 group-hover:bg-secondary transition-colors">
-                      <Icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {value.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              )
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+  {/* FIRST 4 CARDS */}
+  {[
+    {
+      icon: Award,
+      title: 'Sustainable Infrastructure',
+      description:
+        'Design and deliver infrastructure solutions that are environmentally responsible, resource-efficient, and built for long-term performance.',
+    },
+    {
+      icon: Users,
+      title: 'Resilient & Inclusive Development',
+      description:
+        'Support projects that are resilient, inclusive, and adaptable—serving communities, stakeholders, and future growth needs.',
+    },
+    {
+      icon: Target,
+      title: 'Safety & Quality Excellence',
+      description:
+        'Maintain uncompromising standards in safety, quality control, and compliance across all stages of construction and consultancy.',
+    },
+    {
+      icon: Eye,
+      title: 'Digital Transformation Leadership',
+      description:
+        'Pioneer the adoption of digital tools, BIM, automation, and smart technologies in construction and consulting services.',
+    },
+  ].map((value, index) => {
+    const Icon = value.icon
+    return (
+      <Card
+        key={index}
+        className="border-0 shadow-lg text-center group hover:shadow-xl transition-all bg-card"
+      >
+        <CardContent className="p-6">
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-secondary/10 rounded-full mb-4 group-hover:bg-secondary transition-colors">
+            <Icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
           </div>
-        </div>
+          <h3 className="text-xl font-bold text-foreground mb-2">
+            {value.title}
+          </h3>
+          <p className="text-muted-foreground text-sm">
+            {value.description}
+          </p>
+        </CardContent>
+      </Card>
+    )
+  })}
+
+  {/* CENTERED LAST CARD */}
+  <div className="lg:col-span-4 flex justify-center">
+    <div className="max-w-sm w-full">
+      <Card className="border-0 shadow-lg text-center group hover:shadow-xl transition-all bg-card">
+        <CardContent className="p-6">
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-secondary/10 rounded-full mb-4 group-hover:bg-secondary transition-colors">
+            <Handshake className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
+          </div>
+          <h3 className="text-xl font-bold text-foreground mb-2">
+            Long-Term Partnerships & Thought Leadership
+          </h3>
+          <p className="text-muted-foreground text-sm">
+            Build enduring client relationships through trust, expertise, and leadership that drives industry best practices.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+
+</div>
 
         {/* WHY WORK WITH US */}
-        <Card className="border-0 shadow-lg bg-secondary text-secondary-foreground">
+        <Card className="border-0 shadow-lg bg-secondary text-secondary-foreground mt-12">
           <CardContent className="p-8 md:p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Why Work With Us?
@@ -164,5 +175,5 @@ export default function AboutPage() {
         </Card>
       </div>
     </div>
-  )
-}
+</div>
+  )}

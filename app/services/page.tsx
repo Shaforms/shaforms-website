@@ -1,10 +1,11 @@
 import { Home, Building2, Briefcase, ClipboardCheck } from 'lucide-react'
+import { Factory,Layers } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const services = [
   {
     icon: Home,
-    title: 'Residential Contracting',
+    title: 'Residential Construction',
     description:
       'We provide homeowners with individualized attention and high-quality craftsmanship for both new construction and renovations, realizing their dreams.',
   },
@@ -16,7 +17,7 @@ const services = [
   },
   {
     icon: Briefcase,
-    title: 'Commercial Contracting',
+    title: 'Commercial & High Rised Buildings',
     description:
       'We specialize in customized commercial facilities, managing projects with a strong focus on efficiency, quality control, and timelines.',
   },
@@ -25,6 +26,18 @@ const services = [
     title: 'Project Management Consultancy',
     description:
       'Expert guidance across the project lifecycle, ensuring optimized execution, risk mitigation, and successful delivery.',
+  },
+  {
+    icon: Factory,
+    title: 'Steel Structures & Pre-Engineering Structures',
+    description:
+      'We design and execute steel and pre-engineered structures that offer faster construction, cost efficiency, and long-term durability. Ideal for industrial, commercial, and large-span applications with precision-driven engineering.',
+  },
+  {
+    icon: Layers,
+    title: 'Post-Tension (PT) Concrete Structures',
+    description:
+      'We provide post-tension concrete solutions that allow longer spans, reduced slab thickness, and improved structural performance—perfect for modern buildings and open-plan spaces.',
   },
 ]
 
