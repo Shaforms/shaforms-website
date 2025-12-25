@@ -15,7 +15,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Premier construction company in Kerala specializing in residential,
+              Premier construction company specializing in residential,
               commercial, and turnkey projects. Our foundation is excellence,
               delivering what we promised.
             </p>
