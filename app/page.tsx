@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Award, Users, Building, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import TypingText from '@/components/TypingText'
 
 export default function Home() {
   return (
@@ -8,14 +9,15 @@ export default function Home() {
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-background to-muted py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight">
+          <div className="text-center max-w-5xl mx-auto">
+            <h1 className="text-4xl md:text-6xl mb-5 font-bold text-secondary tracking-tight animate-fade-up TypingText">
+
   <span className="inline-block transition-all duration-500 ease-out hover:-translate-y-1">
-    DEFINING THE
+    "Defining the
   </span>{' '}
   <span className="relative inline-block text-primary group cursor-pointer">
     <span className="relative z-10 transition-colors duration-300 group-hover:text-primary/80">
-      SKYLINE
+      Skyline"
     </span>
 
     {/* underline animation */}
@@ -24,10 +26,8 @@ export default function Home() {
 </h1>
 
 
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Premier construction company specializing in residential,
-              commercial, and turnkey projects. Our foundation is excellence,
-              delivering what we promised.
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+              Premier construction firm with expertise in Residential, Commercial, and Comprehensive turnkey solutions. Our commitment is founded on delivering exceptional quality and fulfilling all project promises.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

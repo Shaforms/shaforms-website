@@ -38,7 +38,7 @@ export default async function CareersPage() {
 
         {/* HEADER */}
         <div className="text-center mb-14">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-up">
             Join Our Team
           </h1>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">

@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 bg-background">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-up">
         Our Projects
       </h1>
 

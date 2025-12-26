@@ -57,7 +57,7 @@ const router = useRouter()
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-up">
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

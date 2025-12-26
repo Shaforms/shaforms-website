@@ -67,7 +67,7 @@ export default function ApplyPage() {
 
   return (
     <main className="max-w-xl mx-auto px-6 py-20">
-      <h1 className="text-3xl font-bold mb-10 text-primary">
+      <h1 className="text-3xl font-bold mb-10 text-primary animate-fade-up">
         Apply for this Position
       </h1>
 

@@ -1,6 +1,10 @@
 import { Target, Eye, Award, Users, CheckCircle } from 'lucide-react'
 import { Handshake } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
+import { Linkedin } from 'lucide-react'
+import Image from 'next/image'
+
+
 
 export default function AboutPage() {
   return (
@@ -9,7 +13,7 @@ export default function AboutPage() {
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-up">
             About Shaforms
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -25,10 +29,9 @@ export default function AboutPage() {
                 Who We Are
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-We are a team of dedicated and highly qualified Civil Engineers driven by a passion for transforming ideas into enduring, high-quality structures. With strong technical expertise and a detail-oriented approach, we specialize in planning, designing, and executing projects that balance functionality, aesthetics, and structural integrity. Our work is guided by engineering precision, industry best practices, and a deep understanding of site conditions, materials, and construction methodologies.                </p>
+              
               <p>
-                We are a team of dedicated and highly qualified Civil Engineers driven by a passion for transforming ideas into enduring, high-quality structures. With strong technical expertise and a detail-oriented approach, we specialize in planning, designing, and executing projects that balance functionality, aesthetics, and structural integrity. Our work is guided by engineering precision, industry best practices, and a deep understanding of site conditions, materials, and construction methodologies.
+                We are a team of dedicated and highly qualified Civil Engineers, passionate about transforming your vision into reality. With extensive experience in Residential, Commercial, and Infrastructure Projects, we combine expertise, innovation, and a commitment to quality to deliver exceptional results. Our work is guided by engineering precision, Industry best practices, and a deep understanding of site conditions, materials and construction methodologies.
               </p>
               </div>
             </CardContent>
@@ -66,6 +69,90 @@ We are a team of dedicated and highly qualified Civil Engineers driven by a pass
             </Card>
           ))}
         </div>
+        {/* BOARD MEMBERS */}
+<div className="mb-20">
+  <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+    Leadership Behind Shaforms
+  </h2>
+
+  <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+    Our leadership team brings together deep engineering expertise, strategic
+    vision, and a strong commitment to excellence across every project.
+  </p>
+  
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 place-items-center">
+    
+    {[
+      {
+        name: 'Name Here',
+        role: 'Position',
+        bio: 'Civil Engineer with extensive experience in residential, commercial, and infrastructure projects. Known for strategic planning, execution excellence, and quality-driven leadership.',
+        image: '/team/member1.png', // optional
+      },
+      {
+        name: 'Name Here',
+        role: 'Position',
+        bio: 'Specialist in structural design, project coordination, and safety compliance with hands-on experience in complex construction environments.',
+        image: '/team/member2.png',
+      },
+      {
+        name: 'Name Here',
+        role: 'Position',
+        bio: 'Focused on delivery excellence, client coordination, and ensuring projects are completed on time with uncompromised quality.',
+        image: '/team/member3.png',
+      },
+      {
+        name: 'Name Here',
+        role: 'Position',
+        bio: 'Focused on delivery excellence, client coordination, and ensuring projects are completed on time with uncompromised quality.',
+        image: '/team/member4.png',
+      },
+      {
+        name: 'Name Here',
+        role: 'Position',
+        bio: 'Focused on delivery excellence, client coordination, and ensuring projects are completed on time with uncompromised quality.',
+        image: '/team/member5.png',
+      },
+    ].map((member, index) => (
+      <div
+        key={index}
+        className="group relative rounded-xl overflow-hidden shadow-lg bg-card text-centre p-5 transition-all hover:shadow-xl"
+      >
+        {/* IMAGE */}
+        <div className="relative h-60 w-full overflow-hidden">
+          
+  <Image
+    src={member.image}
+    alt={member.name}
+    fill
+    sizes="(max-width: 768px) 100vw, 33vw"
+    className="object-cover transition-transform duration-500 group-hover:scale-105"
+  />
+</div>
+
+
+        {/* CONTENT */}
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-bold text-foreground">
+            {member.name}
+          </h3>
+          <p className="text-secondary font-medium mb-3">
+            {member.role}
+          </p>
+
+          <p className="text-sm text-muted-foreground leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500">
+            {member.bio}
+          </p>
+
+          
+          
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* CORE VALUES */}
         <div className="mb-16">
