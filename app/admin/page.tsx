@@ -121,6 +121,14 @@ export default function AdminDashboard() {
     </p>
   </div>
 </Link>
+<Link href="/admin/contacts">
+  <div className="rounded-xl border p-6 hover:shadow-md transition">
+    <h3 className="text-xl font-semibold">Manage Queries</h3>
+    <p className="text-sm text-muted-foreground">
+      View and review Enquires.
+    </p>
+  </div>
+</Link>
 
 
         </div>

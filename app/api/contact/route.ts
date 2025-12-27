@@ -1,40 +1,41 @@
-import { Resend } from 'resend'
+import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
-
-const apiKey = process.env.RESEND_API_KEY
-
-if (!apiKey) {
-  throw new Error('RESEND_API_KEY is missing')
-}
-
-const resend = new Resend(apiKey)
 
 export async function POST(req: Request) {
   try {
+    const supabase = createClient()
     const { firstName, lastName, email, phone, message } = await req.json()
 
     if (!firstName || !lastName || !email || !phone || !message) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'Missing fields' },
+        { status: 400 }
+      )
     }
 
-    await resend.emails.send({
-      from: 'Shaforms Contact <onboarding@resend.dev>', // SAFE
-      to: ['info@shaforms.com'],
-      replyTo: email,
-      subject: `New Contact Message from ${firstName} ${lastName}`,
-      html: `
-        <h2>New Contact Message</h2>
-        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+    const { error } = await supabase.from('contacts').insert({
+      first_name: firstName,
+      last_name: lastName,
+      email,
+      phone,
+      message,
+      is_new: true, // NEW message
     })
 
+    if (error) {
+      console.error('Supabase insert error:', error)
+      return NextResponse.json(
+        { error: 'Database insert failed' },
+        { status: 500 }
+      )
+    }
+
     return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error('Resend error:', error)
-    return NextResponse.json({ error: 'Email failed' }, { status: 500 })
+  } catch (err) {
+    console.error('Server error:', err)
+    return NextResponse.json(
+      { error: 'Server error' },
+      { status: 500 }
+    )
   }
 }

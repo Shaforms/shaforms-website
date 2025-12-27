@@ -1,4 +1,5 @@
 'use client'
+
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { MapPin, Mail, Phone, Facebook, Instagram, Linkedin } from 'lucide-react'
@@ -10,6 +11,8 @@ import { useToast } from '@/hooks/use-toast'
 
 export default function ContactPage() {
   const { toast } = useToast()
+  const router = useRouter()
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,38 +20,43 @@ export default function ContactPage() {
     phone: '',
     message: '',
   })
+
   const [isSubmitting, setIsSubmitting] = useState(false)
-const router = useRouter()
+
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  setIsSubmitting(true)
+    e.preventDefault()
+    setIsSubmitting(true)
 
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
 
-    if (!res.ok) throw new Error()
+      if (!res.ok) {
+        throw new Error('Submission failed')
+      }
 
-    router.push('/contact/success')
-  } catch {
-    toast({
-      title: 'Error',
-      description: 'Something went wrong. Please try again.',
-      variant: 'destructive',
-    })
-  } finally {
-    setIsSubmitting(false)
+      router.push('/contact/success')
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Something went wrong. Please try again.',
+        variant: 'destructive',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
-}
-
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   }
 
   return (
@@ -57,12 +65,11 @@ const router = useRouter()
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-up">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? .
-            Send us a message and we’ll respond as soon as possible.
+            Have a project in mind? Send us a message and we’ll respond as soon as possible.
           </p>
         </div>
 
@@ -166,18 +173,16 @@ const router = useRouter()
                     <MapPin className="h-5 w-5 text-secondary mt-0.5" />
                     <div>
                       <p className="font-medium text-foreground">Head Office</p>
-                      <p>3A-EDIFICE Building</p>
-                  <p>Kottaram Road, East Nadakkavu</p>
-                  <p>Calicut-6, Kerala</p>
+                      <p>3A – EDIFICE Building</p>
+                      <p>Kottaram Road, East Nadakkavu</p>
+                      <p>Calicut – 6, Kerala</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-secondary" />
                     <a href="tel:+919876543210" className="hover:text-secondary">
-                     <a href="tel:+919876543200" className="hover:text-secondary">
-                      +91 9876543210 | +919876543200
-                      </a>
+                      +91 98765 43210
                     </a>
                   </div>
 
@@ -207,6 +212,7 @@ const router = useRouter()
                       key={i}
                       href="#"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-colors"
                     >
                       <Icon className="h-5 w-5" />
