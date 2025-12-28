@@ -124,5 +124,8 @@
 .animate-fade-up {
   animation: fade-up 0.6s ease-out both;
 }
+.font-times {
+  font-family: "Times New Roman", Times, serif;
+}
 
 }

@@ -17,9 +17,7 @@ export const metadata: Metadata = {
   description: 'Premier construction company in Kerala specializing in residential, commercial, and turnkey projects. Excellence in delivering what we promised.',
   openGraph: {
     images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
+      
     ],
   },
   twitter: {

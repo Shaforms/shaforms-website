@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 
 type Project = {
   id: string
-  name: string
+  title: string
   location: string | null
   year: number | null
   image_url: string | null
@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
 
   const { data: projects, error } = await supabase
     .from('projects')
-    .select('id, name, location, year, image_url')
+    .select('id, title, location, year, image_url')
     .order('created_at', { ascending: false })
 
   if (error) {
@@ -48,7 +48,7 @@ export default async function ProjectsPage() {
                   p.image_url ||
                   'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg'
                 }
-                alt={p.name}
+                alt={p.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -60,7 +60,7 @@ export default async function ProjectsPage() {
             {/* TEXT */}
             <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all">
               <h2 className="text-xl font-semibold text-white">
-                {p.name}
+                {p.title}
               </h2>
 
               {(p.location || p.year) && (

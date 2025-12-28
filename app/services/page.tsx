@@ -10,22 +10,10 @@ const services = [
       'We provide homeowners with individualized attention and high-quality craftsmanship for both new construction and renovations, realizing their dreams.',
   },
   {
-    icon: Building2,
-    title: 'Turnkey Construction Projects',
-    description:
-      'Comprehensive end-to-end project handling that ensures peace of mind, efficiency, and consistent quality from planning to handover.',
-  },
-  {
     icon: Briefcase,
     title: 'Commercial & High Rised Buildings',
     description:
       'We specialize in customized commercial facilities, managing projects with a strong focus on efficiency, quality control, and timelines.',
-  },
-  {
-    icon: ClipboardCheck,
-    title: 'Project Management Consultancy',
-    description:
-      'Expert guidance across the project lifecycle, ensuring optimized execution, risk mitigation, and successful delivery.',
   },
   {
     icon: Factory,
@@ -39,6 +27,19 @@ const services = [
     description:
       'We provide post-tension concrete solutions that allow longer spans, reduced slab thickness, and improved structural performance—perfect for modern buildings and open-plan spaces.',
   },
+  {
+    icon: ClipboardCheck,
+    title: 'Project Management Consultancy',
+    description:
+      'Expert guidance across the project lifecycle, ensuring optimized execution, risk mitigation, and successful delivery.',
+  },
+  {
+    icon: Building2,
+    title: 'Turnkey Construction Projects',
+    description:
+      'Comprehensive end-to-end project handling that ensures peace of mind, efficiency, and consistent quality from planning to handover.',
+  },
+  
 ]
 
 export default function ServicesPage() {

@@ -232,7 +232,7 @@ export default function AboutPage() {
 </div>
 
         {/* WHY WORK WITH US */}
-        <Card className="border-0 shadow-lg bg-secondary text-secondary-foreground mt-12">
+        <Card className="border-0 shadow-lg bg-primary text-secondary-foreground mt-12">
           <CardContent className="p-8 md:p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Why Work With Us?

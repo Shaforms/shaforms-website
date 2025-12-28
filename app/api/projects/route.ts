@@ -9,7 +9,7 @@ const supabase = createClient(
 export async function GET() {
   const { data, error } = await supabase
     .from('projects')
-    .select('id, name, location, year, image_url')
+    .select('id, title, location, year, image_url')
     .order('created_at', { ascending: false })
 
   if (error) {
