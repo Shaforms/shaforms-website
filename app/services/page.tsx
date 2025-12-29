@@ -1,6 +1,14 @@
 import { Home, Building2, Briefcase, ClipboardCheck } from 'lucide-react'
 import { Factory,Layers } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Construction Services across India | Shaforms',
+  description:
+    'Shaforms provides residential construction, turnkey projects, steel structures, and post-tension concrete solutions across India.',
+}
+
 
 const services = [
   {

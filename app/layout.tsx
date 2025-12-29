@@ -13,7 +13,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Shaforms - Defining the Skyline',
+  title: 'Shaforms - Building Excellence across India',
   description: 'Premier construction firm with expertise in Residential, Commercial, and Comprehensive turnkey solutions. Our commitment is founded on delivering exceptional quality and fulfilling all project promises.',
   openGraph: {
     images: [

@@ -1,5 +1,13 @@
 import Image from 'next/image'
 import { createClient } from '@/lib/supabase/server'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Projects | Building Excellence across India',
+  description:
+    'Explore completed and ongoing residential, commercial, and infrastructure projects delivered by Shaforms across India.',
+}
+
 
 export const dynamic = 'force-dynamic'
 
