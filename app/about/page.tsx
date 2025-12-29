@@ -28,7 +28,7 @@ export default function AboutPage() {
 
   const leaders: Leader[] = [
     {
-      name: 'Er. K. ASHARAF ALI (M.E, M.Sc.)',
+      name: 'Er. K. ASHARAF ALI      (M.E, M.Sc.)',
       role: 'Chairman',
       bio: 'PhD (Scholar) Solid Waste Management, M.E in Environmental Engineering, B.E. in Civil Engineering, Diploma in Architectural Engineering, M.Sc. Applied Psychology. 28 Years Experience in Architectural & Civil Engineering. Founder of Solidago Designs Coimbatore. State PRO & Zone Malabar Chairman, Integrated Civil Engineers Council (ICEC) State Vice President, Environmental Engineers Society (EES). Chairman EHAB Sustainable Solutions, Palakkad.',
       image: '/team/member1.png',
