@@ -23,14 +23,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.png',
   },
-  twitter: {
-    card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
-    ],
-  },
+  
 };
 
 export default function RootLayout({
