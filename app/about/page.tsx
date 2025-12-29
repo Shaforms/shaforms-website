@@ -26,25 +26,25 @@ export default function AboutPage() {
 
   const leaders: Leader[] = [
     {
-      name: 'Er. K. Ashraf Ali (M.E, M.Sc.)',
+      name: 'Er. K. ASHARAF ALI (M.E, M.Sc.)',
       role: 'Chairman',
       bio: 'PhD (Scholar) Solid Waste Management, M.E in Environmental Engineering, B.E. in Civil Engineering, Diploma in Architectural Engineering, M.Sc. Applied Psychology. 28 Years Experience in Architectural & Civil Engineering. Founder of Solidago Designs Coimbatore. State PRO & Zone Malabar Chairman, Integrated Civil Engineers Council (ICEC) State Vice President, Environmental Engineers Society (EES). Chairman EHAB Sustainable Solutions, Palakkad.',
       image: '/team/member1.png',
     },
     {
-      name: 'Er. Shinoj. P.S',
+      name: 'Er. SHINOJ. P.S',
       role: 'CEO',
       bio: 'PhD (Scholar) in Advanced Concrete Technology, M.E in Structural Engineering. Principal Structural Consultant, Diseno Structurals Pvt. Ltd. Calicut. 15 years experience in Civil Engineering field with area of expertise in both structural as well as architectural designing. ICEC former State Chairman. 2022-25. Executive member of Structural Engineers Association of Kozhikode (SEAK).',
       image: '/team/member2.png',
     },
     {
-      name: 'Mr. Shebeer T K',
+      name: 'Mr. SHEBEER T K',
       role: 'Project Manager',
       bio: 'Experienced Civil Engineer with an educational background of Diploma in Civil Engineering, am expertise in Project planning, designing, managing and team coordination and in K-Smart building permit approval. I m also working associated to SOLIDAGO DESIGNS, Perinthalmanna..',
       image: '/team/member4.png',
     },
     {
-      name: 'Er. Mohamed Hisham',
+      name: 'Er. MOHAMED HISHAM',
       role: 'Technical Director',
       bio: `Civil Engineer & Sustainability Expert with a Bachelor's degree from APJ Abdul Kalam Technological University (KTU) and a Master's degree in Environmental Engineering from Anna University. Currently pursuing MBA from VELS University, Chennai. Associated with SOLIDAGO DESIGNS and an active member of ICEC.`,
       image: '/team/member5.png',

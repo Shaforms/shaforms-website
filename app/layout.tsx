@@ -14,7 +14,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: 'Shaforms - Defining the Skyline',
-  description: 'Premier construction company in Kerala specializing in residential, commercial, and turnkey projects. Excellence in delivering what we promised.',
+  description: 'Premier construction firm with expertise in Residential, Commercial, and Comprehensive turnkey solutions. Our commitment is founded on delivering exceptional quality and fulfilling all project promises.',
   openGraph: {
     images: [
       
