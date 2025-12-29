@@ -10,7 +10,7 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-background to-muted py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-6xl mb-5 font-bold text-secondary tracking-tight animate-fade-up TypingText font-times">
+            <h1 className="text-4xl md:text-6xl mb-5 font-bold text-secondary tracking-tight animate-fade-up">
 
   <span className="inline-block transition-all duration-500 ease-out hover:-translate-y-1">
     "Defining

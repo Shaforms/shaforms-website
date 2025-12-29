@@ -181,10 +181,17 @@ export default function ContactPage() {
 
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-secondary" />
-                    <a href="tel:+919876543210" className="hover:text-secondary">
-                      +91 98765 43210
+                    <a href="tel:+919746760828" className="hover:text-secondary">
+                      9746760828 |
+                    </a>
+                    <a href="tel:+919961477585" className="hover:text-secondary">
+                      9961477585 |
+                    </a>
+                    <a href="tel:+919747653337" className="hover:text-secondary">
+                      9747653337
                     </a>
                   </div>
+                 
 
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-secondary" />
