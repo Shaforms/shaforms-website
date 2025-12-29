@@ -20,13 +20,7 @@ type Leader = {
   image: string
   linkedin?: string
 }
-import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'About Shaforms | Building Excellence across India',
-  description:
-    'Learn about Shaforms, a premier construction company in Kerala delivering residential, commercial, and turnkey projects with engineering excellence.',
-}
 
 
 export default function AboutPage() {

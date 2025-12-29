@@ -9,13 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
-import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Careers at Shaforms | Construction Jobs across India',
-  description:
-    'Explore career opportunities at Shaforms. Join our team of civil engineers, project managers, and construction professionals shaping quality projects across India.',
-}
 
 
 export const dynamic = 'force-dynamic';
