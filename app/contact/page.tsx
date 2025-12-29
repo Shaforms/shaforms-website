@@ -8,13 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/hooks/use-toast'
-import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Contact Shaforms | Construction Company in Kerala',
-  description:
-    'Get in touch with Shaforms for residential, commercial, and turnkey construction projects across Kerala.',
-}
 
 export default function ContactPage() {
   const { toast } = useToast()
