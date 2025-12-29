@@ -42,7 +42,6 @@ export default function AboutPage() {
       role: 'Project Manager',
       bio: `Civil Engineer & Sustainability Expert with a Bachelor's degree from APJ Abdul Kalam Technological University (KTU) and a Master's degree in Environmental Engineering from Anna University. Currently pursuing MBA from VELS University, Chennai. Associated with SOLIDAGO DESIGNS and an active member of ICEC.`,
       image: '/team/member5.png',
-      linkedin: '#',
     },
     {
       name: 'Mr. Shebeer T K',
