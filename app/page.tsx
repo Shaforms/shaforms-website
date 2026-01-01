@@ -9,15 +9,15 @@ export default function Home() {
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-background to-muted py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-6xl mb-5 font-bold text-secondary tracking-tight animate-fade-up">
+          <div className="text-center max-w-8xl mx-auto">
+            <h1 className="text-8xl md:text-6xl mb-5 font-bold italic text-secondary tracking-tight animate-fade-up">
 
   <span className="inline-block transition-all duration-500 ease-out hover:-translate-y-1">
-    "Defining
+    Defining
   </span>{' '}
   <span className="relative inline-block text-primary group cursor-pointer">
     <span className="relative z-10 transition-colors duration-300 group-hover:text-primary/80">
-     the Skyline"
+     the Skyline
     </span>
 
     {/* underline animation */}
