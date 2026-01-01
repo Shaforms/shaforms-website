@@ -186,7 +186,7 @@ export default function ContactPage() {
                       9633281231 |
                     </a>
                     <a href="tel:+919633481231" className="hover:text-secondary">
-                      9633481231 |
+                      9633481231
                     </a>
                   
                   </div>
